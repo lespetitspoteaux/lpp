@@ -1,0 +1,26 @@
+#logo{
+  width: 60px;
+  margin-top: -5px;
+}
+
+html,
+body,
+header,
+#intro {
+  height: 100%;
+}
+
+#intro{
+  background: url('../img/pict2.jpg')no-repeat center center fixed;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+}
+
+#logo_full{
+  width: 300px;
+  height: auto;
+  opacity: 0.8;
+  margin-top: 200px;
+}

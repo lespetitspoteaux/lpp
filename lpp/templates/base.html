@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>{% block title %} Les Petits Poteaux {% endblock %}</title>
+    <!-- FAVICON -->
+    <!-- ca marche pas je sais pas pq
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicons/apple-touch-icon.png"%}">
+    <link rel="icon" type="favicons/image/png" sizes="32x32" href="{% static "favicons/favicon-32x32.png"%}">
+    <link rel="icon" type="favicons/image/png" sizes="16x16" href="{% static "favicons/favicon-16x16.png"%}">
+    <link rel="manifest" href="{% static "favicons/manifest.json"%}">
+    <link rel="mask-icon" href="{% static "favicons/safari-pinned-tab.svg"%}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+
+      <!-- Navbar, pas encore responsive , a faire -->
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+          <a class="navbar-brand" href="#">
+            <img id="logo" src="{% static "img/logo_lpp.png"%}" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home</a>
+              <a class="nav-item nav-link" href="#">Link</a>
+              <a class="nav-item nav-link" href="#">Link</a>
+            </div>
+            <div class="nav navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-item nav-link" href="{% url 'signup' %}">Register</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Background img -->
+      <div id="intro" class="view hm-black-strong">
+        <div class="container-fluid full-bg-img d-flex align-items-center justify-content-center"></div>
+          {% block content %}
+
+          {% endblock %}
+      </div>
+    </header>
+
+    <main>
+      {% block second %}
+
+      {% endblock %}
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
