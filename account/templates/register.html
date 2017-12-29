@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'base_account.html' %}
 
-{% block content_login %}
+{% block content_register %}
     <form method="POST">
       {% csrf_token %}
       <div class="container">
@@ -25,18 +25,20 @@
                 <!-- Nom -->
                 <div style="margin-bottom: 25px" class="input-group">
                   <span class="input-group-addon">
-                    <label for="id_nom">Nom:</label>
+                    <label for="id_nom">PSN:</label>
                   </span>
-                      <input type="text" class="form-control" name="nom" maxlength="30" autofocus required id="id_nom" placeholder="Not Required"/><br />
+                      <input type="text" class="form-control" name="nom" maxlength="30" autofocus id="id_nom" placeholder="Not Required"/><br />
                 </div>
 
+                <!-- Prenom -->
                 <div style="margin-bottom: 25px" class="input-group">
                   <span class="input-group-addon">
-                    <label for="id_prenom">Prenom:</label>
+                    <label for="id_prenom">XBOX LIVE:</label>
                   </span>
-                      <input type="text" class="form-control" name="prenom" maxlength="30" autofocus required id="id_prenom" placeholder="Not Required"/><br />
+                      <input type="text" class="form-control" name="prenom" maxlength="30" autofocus id="id_prenom" placeholder="Not Required"/><br />
                 </div>
 
+                <!-- email -->
                 <div style="margin-bottom: 25px" class="input-group">
                   <span class="input-group-addon">
                     <label for="id_email">Email:</label>
@@ -44,18 +46,19 @@
                       <input type="text" class="form-control" name="email" maxlength="124" autofocus required id="id_email" placeholder="Required"/><br />
                 </div>
 
+                <!-- Password -->
                 <div style="margin-bottom: 25px" class="input-group">
                   <span class="input-group-addon">
                     <label for="id_password1">Password:</label>
                   </span>
-                      <input type="text" class="form-control" name="password1" maxlength="120" autofocus required id="id_password1" placeholder="8+ characters, characters + numeric"/><br />
+                      <input type="password" class="form-control" name="password1" maxlength="120" autofocus required id="id_password1" placeholder="8+ characters, characters + numeric"/><br />
                 </div>
 
                 <div style="margin-bottom: 25px" class="input-group">
                   <span class="input-group-addon">
                     <label for="id_password2">Password confirmation:</label>
                   </span>
-                      <input type="text" class="form-control" name="password2" maxlength="120" autofocus required id="id_password2" placeholder="Confirmation password"/><br />
+                      <input type="password" class="form-control" name="password2" maxlength="120" autofocus required id="id_password2" placeholder="Confirmation password"/><br />
                 </div>
 
 

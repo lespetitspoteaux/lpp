@@ -1,0 +1,15 @@
+{% extends "base_dashboard.html" %}
+
+{% block content_settings%}
+  <div class="container" style="margin-top:50px;">
+    <h1 class="text-center">Settings</h1>
+    <div class="container">
+      <h3>username: {{user.username}}</h3>
+      <h3>password:
+        <a href="{% url 'change_password' %}">Change your password</a>
+      </h3>
+
+    </div>
+  </div>
+
+{% endblock %}

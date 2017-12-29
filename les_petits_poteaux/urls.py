@@ -1,4 +1,4 @@
-"""account_lpp URL Configuration
+"""les_petits_poteaux URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -21,5 +21,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name = 'home.html'),name='home'),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls'), name='account'),
+    path('dashboard/', include('dashboard.urls'), name='dashboard'),
     path('oauth/', include('social_django.urls', namespace='social')),
 ]

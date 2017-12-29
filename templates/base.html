@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>{% block title %}Les Petits Poteaux{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-left" href="#">
+              <img style="margin-top:5px; max-width:50px;" src="{% static "img/logo_lpp.png"%}" alt="Brand">
+            </a>
+          </div>
+          <div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="#Presentation">Presentation</a></li>
+                <li><a href="#Concept">Concept</a></li>
+                <li><a href="#Reglement">Reglement</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+
+                {% if user.is_authenticated %}
+
+                <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                   <span class="glyphicon glyphicon-user"></span>
+                   {{user.username}}
+                   <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                   <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                   <li><a href="{% url 'settings' %}">Settings</a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="{% url 'logout' %}">Logout</a></li>
+                 </ul>
+               </li>
+
+                {% else %}
+
+                <li><a href="{% url 'login' %}">Login</a></li>
+
+                {% endif %}
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Background img -->
+      <div id="intro" class="view hm-black-strong">
+        <div class="container-fluid full-bg-img d-flex align-items-center justify-content-center"></div>
+
+        </div>
+      </div>
+
+
+    </header>
+    {% block content_home %}
+
+    {% endblock %}
+  </body>
+</html>
